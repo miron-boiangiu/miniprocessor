@@ -117,12 +117,12 @@ Where:
 #### Example of usage:
 
 * []() Task1:    
-	```sh
+	```
 	Input: 1675493376 → Output: 4 + - / * 16  
 	Input: 2483421184 → Output: 5 * * + + + 13  
 	```
 * []() Task2:     
-	```sh
+	```
 	Input: 1410859008  
 	Interpretation: 3 * * + 4  
 	Numbers to be read = 1  
@@ -130,7 +130,7 @@ Where:
 	Operands: 13 6 13 7  
 	Output: 1021  
 	```
-	```sh
+	```
 	Input: 1947074560  
 	Interpretation: 4 * * + + 8  
 	Numbers to be read = 3  

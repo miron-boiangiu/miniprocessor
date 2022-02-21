@@ -1,0 +1,50 @@
+Task 1:
+Pentru N:
+Observand ca valorile de intrare sunt intotdeauna de
+32 de biti, pentru a afla N am scos primii 29 mutand
+spre dreapta valoarea introdusa.
+Pentru operatii:
+Apoi, pentru a afla operatiile, am dedus o formula ce
+afla cei doi biti de la o anumita pozitie mutand spre
+dreapta instructiunea pana cand operatia dorita este
+pe ultimii 2 biti, pe care apoi ii pastrez printr-o 
+masca 0x11, pentru a elimina toti ceilalti biti.
+Pentru a le interpreta, am creat o functie separata ce
+scrie ce fel de operatie este, in functie de bitii
+dati acesteia.
+Pentru dimensiune:
+Pentru dimensiune folosesc aceeasi metoda ca la operatii,
+determinand cu o formula cati biti de padding am, eliminandu-i
+si apoi aplicand o masca 0x1111 pentru a pastra doar pe acestia.
+
+Task 2:
+Plecand de la Task 1, am deja un sistem ce imi determina tipul operatiilor,
+numarul acestora si dimensiunea pe care trebuie sa o aiba un operand.
+Plecand de la faptul ca sunt maxim 8 operatii, creez un vector cu 9 pozitii
+in care urmeaza sa pastrez operanzii si o variabila operanzi_counter ce
+memoreaza cati operanzi am introdus pana acum. Stim ca numarul acestora
+va trebui sa fie N+1, adica atate operatii cat avem si inca unul, dar
+tinem minte cati avem pana acum caci ne va fi utila informatia la citirea
+lor.
+Folosind formula data de enunt pentru cate numere trebuie citite, de
+atatea ori cate numere trebuie sa avem, facem urmatorul lucru:
+introducem numarul intr-o variabila "val", pe care urmeaza sa o "feliem"
+in atatea bucati cat ne spune formula: 16/(dimensiunea operandului), 
+intrucat fiecare numar este un unsigned short int ce va avea dimensiunea
+16. Dimensiunea va divide 16 perfect, caci este multiplu de 2 sigur. 
+Daca ne mai trebuie operanzi (caci la ultimul numar este posibil sa
+mai poata fi "feliat", dar sa avem deja numarul necesar si sa fi ramas
+numai padding), atunci pentru fiecare bucata folosim formula operand,
+care, folosind aceeasi metoda ca cea folosita in task-ul anterior la
+aflarea operatiilor, obtine un numar egal cu dimensiunea ceruta de biti,
+de la o anumita pozitie din valoarea data (este cea care face "felierea"
+de fapt: daca ii cerem pozitia 1 din 0x 10000000 10000000, cu dimensiunea
+8, atunci ne va returna 10000000, pe care il va pune in vectorul cu operanzi.
+Dupa obtinerea atatora operanzi cat sunt necesari, pentru atatea operatii cat
+e nevoie sa facem, aplicam o alta functie ajutatoare calculate_op, care este doar
+check_op() usor modificata: acum, ea ne cere operatia dorita, valoarea cu care
+sa facem operatia si un loc in care nu doar punem rezultatul, dar care este si
+al doilea termen al operatiei dorite. Functiei dam un pointer spre locul unde
+vrem sa punem rezultatul, pentru a usura utilizarea acesteia (altfel, ar fi
+trebuit sa punem S = calculate_op(...) acolo unde o apelam).
+Dupa aplicarea fiecarei operatii. rezultatul este afisat. :)

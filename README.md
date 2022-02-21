@@ -114,6 +114,7 @@ Where:
 	- 11: /  
 - DIM: size of an operand, represented as a 4-bit number. DIM is calculated by converting the 4 bits to decimal and adding 1 to the resulting number.
 
+#### Example of usage:
 
 * []() Task1:    
 	```sh

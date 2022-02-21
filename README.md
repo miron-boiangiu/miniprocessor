@@ -124,21 +124,21 @@ Where:
 * []() Task2:     
 	```sh
 	Input: 1410859008  
-	Output: 3 * * + 4  
-	Numere de introdus = 1  
-	Introduceți număr: 54999  
-	Operanzii: 13 6 13 7  
-	Rezultat: 1021  
+	Interpretation: 3 * * + 4  
+	Numbers to be read = 1  
+	Number entered: 54999  
+	Operands: 13 6 13 7  
+	Output: 1021  
 	```
 	```sh
 	Input: 1947074560  
-	Output: 4 * * + + 8  
-	Numere de introdus = 3  
-	Introduceți număr: 54998  
+	Interpretation: 4 * * + + 8  
+	Numbers to be read = 3  
+	Numbers read: 54998  
 	64041  
 	42752  
-	Operanzii:214 214 250 41 167 0 0 0 0 0  
-	Rezultat: 11449208  
+	Operands:214 214 250 41 167 0 0 0 0 0  
+	Output: 11449208  
 	```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
